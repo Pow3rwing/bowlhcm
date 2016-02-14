@@ -155,31 +155,4 @@ public class BowlingPartieBuilder {
 	}
     }
 
-    /**
-     * 
-     * @param tokensLinkedList
-     * @param partie
-     */
-    private void tokensToPartieBonus(LinkedList<String> tokensLinkedList, Partie partie, int nbPhase) {
-	Integer score = 0;
-	Phase phase = new Phase();
-	StringBuffer stringBuffer = new StringBuffer();
-	if (StringUtils.isNumeric(tokensLinkedList.getFirst())) {
-	    stringBuffer.append(tokensLinkedList.removeFirst());
-	    score += Integer.valueOf(stringBuffer.toString());
-	    phase.setTypePhase(TypePhase.SPARE_BONUS);
-	    phase.setScorePremierEssai(Integer.valueOf(stringBuffer.toString()));
-	    partie.addPhase(phase);
-	} else if (StringUtils.equals(tokensLinkedList.getFirst(), BowlingCst.STRIKE)) {
-	    phase.setContenu(tokensLinkedList.removeFirst());
-	    phase.setScorePremierEssai(BowlingCst.SPARE_OR_STRIKE);
-	    phase.setScoreSimple(BowlingCst.SPARE_OR_STRIKE);
-	    phase.setTypePhase(TypePhase.SPARE_BONUS);
-	    partie.addPhase(phase);
-	} else if (StringUtils.equals(tokensLinkedList.getFirst(), BowlingCst.NOTHING)) {
-	    phase.setContenu(tokensLinkedList.removeFirst());
-	    phase.setTypePhase(TypePhase.SPARE_BONUS);
-	    partie.addPhase(phase);
-	}
-    }
 }

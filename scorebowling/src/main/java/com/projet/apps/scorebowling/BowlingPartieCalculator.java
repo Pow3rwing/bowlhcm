@@ -17,10 +17,8 @@ public final class BowlingPartieCalculator {
 	LinkedList<Phase> phasesLinkedList = partie.getPhasesLinkedList();
 	LinkedList<Integer> scoreLinkedList = new LinkedList<Integer>();
 
-	int numeroPhase = 0;
-	for (Phase phase : phasesLinkedList) {
-	    calculPhase(phase, phasesLinkedList, scoreLinkedList, numeroPhase);
-	    numeroPhase++;
+	for (int nbPhase = 0; nbPhase < 10; nbPhase++) {
+	    calculPhase(phasesLinkedList.get(nbPhase), phasesLinkedList, scoreLinkedList, nbPhase);
 	}
 	return scoreLinkedList;
     }
