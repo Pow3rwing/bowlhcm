@@ -13,7 +13,7 @@ import org.apache.commons.lang3.StringUtils;
 import com.projet.apps.scorebowling.builders.BowlingSessionBuilder;
 import com.projet.apps.scorebowling.exception.BadScoreLineException;
 import com.projet.apps.scorebowling.model.BowlingSession;
-import com.projet.apps.scorebowling.process.BowlingPartieCalculator;
+import com.projet.apps.scorebowling.process.BowlingSessionCalculator;
 import com.projet.apps.scorebowling.util.BowlingCst;
 
 import junit.framework.Test;
@@ -52,8 +52,9 @@ public class BowlingScoreCalculatorTest extends TestCase {
 
     public void testPerfectGame() throws BadScoreLineException {
 	BowlingSession partie = BowlingSessionBuilder.getBowlingSessionBuilderInstance().buildPartie("XXXXXXXXXXXX");
-	BowlingPartieCalculator bowlingPartieCalculator = BowlingPartieCalculator.getBowlingPartieCalculatorInstance();
-	List<Integer> scoreList = bowlingPartieCalculator.calculerScore(partie);
+	BowlingSessionCalculator bowlingSessionCalculator = BowlingSessionCalculator
+		.getBowlingSessionCalculatorInstance();
+	List<Integer> scoreList = bowlingSessionCalculator.calculerScore(partie);
 	assertTrue(scoreList.get(BowlingCst.NB_FRAMES - 1) == 300);
     }
 

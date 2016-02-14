@@ -2,7 +2,7 @@ package com.projet.apps.scorebowling.model;
 
 import java.util.LinkedList;
 
-import com.projet.apps.scorebowling.process.BowlingPartieCalculator;
+import com.projet.apps.scorebowling.process.BowlingSessionCalculator;
 import com.projet.apps.scorebowling.util.BowlingCst;
 
 /**
@@ -38,9 +38,10 @@ public class BowlingSession {
 	StringBuffer stringBuffer = new StringBuffer();
 	stringBuffer
 		.append("========================================================================================\n");
-	BowlingPartieCalculator bowlingPartieCalculator = BowlingPartieCalculator.getBowlingPartieCalculatorInstance();
+	BowlingSessionCalculator bowlingSessionCalculator = BowlingSessionCalculator
+		.getBowlingSessionCalculatorInstance();
 	if (phasesLinkedList.size() > 0) {
-	    LinkedList<Integer> scoreLinkedList = (LinkedList<Integer>) bowlingPartieCalculator.calculerScore(this);
+	    LinkedList<Integer> scoreLinkedList = (LinkedList<Integer>) bowlingSessionCalculator.calculerScore(this);
 	    int i = 1;
 	    stringBuffer.append("Session : " + this.getSession() + " || score final :" + scoreLinkedList.getLast()
 		    + "|| détail de la partie : " + "\n");

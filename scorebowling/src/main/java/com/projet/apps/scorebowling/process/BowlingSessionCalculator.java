@@ -13,16 +13,16 @@ import com.projet.apps.scorebowling.util.TypePhase;
  * @author cherrat
  *
  */
-public final class BowlingPartieCalculator {
+public final class BowlingSessionCalculator {
 
-    private static BowlingPartieCalculator bowlingPartieCalculator = new BowlingPartieCalculator();
+    private static BowlingSessionCalculator bowlingSessionCalculator = new BowlingSessionCalculator();
 
-    private BowlingPartieCalculator() {
+    private BowlingSessionCalculator() {
 	super();
     }
 
-    public static BowlingPartieCalculator getBowlingPartieCalculatorInstance() {
-	return bowlingPartieCalculator;
+    public static BowlingSessionCalculator getBowlingSessionCalculatorInstance() {
+	return bowlingSessionCalculator;
     }
 
     /**
