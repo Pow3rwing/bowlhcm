@@ -34,6 +34,7 @@ public class BowlingSessionBuilder {
     }
 
     /**
+     * Construit la partie/session en partant d'une ligne de score
      * 
      * @param ligneScore
      * @return

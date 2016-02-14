@@ -1,5 +1,10 @@
 package com.projet.apps.scorebowling.exception;
 
+/**
+ * 
+ * @author cherrat
+ *
+ */
 public class BadScoreLineException extends Exception {
     /**
      * 
